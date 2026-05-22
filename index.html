@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPA Vowel Chart</title>
+    <title>IPA Vowel Chart - English & Spanish</title>
     <style>
         body {
             display: flex;
@@ -39,13 +39,13 @@
 
         .line-grid {
             stroke: #000;
-            stroke-width: 3;
+            stroke-width: 1.5;
             fill: none;
         }
 
         /* Polígono del área "Lax" */
         .poly-lax {
-            fill: #aaaaaa;
+            fill: none;
             stroke: #000;
             stroke-width: 3.5;
             stroke-dasharray: 6, 4;
@@ -59,24 +59,42 @@
             stroke-dasharray: 12, 10;
         }
 
-        /* Tipografía de los fonemas y etiquetas */
+        /* Tipografía y colores */
         .phoneme {
-            font-size: 46px;
+            font-size: 28px;
             text-anchor: middle;
-            fill: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        .word {
+            font-size: 14px;
+            text-anchor: middle;
+            font-family: Arial, sans-serif;
         }
 
         .label {
-            font-size: 22px;
+            font-size: 20px;
             text-anchor: middle;
             fill: #000;
         }
 
         .label-round {
-            font-size: 22px;
+            font-size: 20px;
             text-anchor: middle;
             fill: #000;
         }
+        
+        .label-small {
+            font-size: 14px;
+            font-weight: bold;
+            fill: #000;
+            text-anchor: middle;
+        }
+
+        /* Clases utilitarias de color */
+        .black { fill: #000; }
+        .blue { fill: #3b5998; }
+        .red { fill: #d92525; }
     </style>
 </head>
 <body>
@@ -90,39 +108,67 @@
             
             <path class="line-grid" d="M 150 200 L 700 200" />
             <path class="line-grid" d="M 200 350 L 700 350" />
-            
             <path class="line-grid" d="M 300 50 L 300 500" />
             <path class="line-grid" d="M 500 50 L 500 500" />
 
-            <rect class="rect-round" x="520" y="30" width="220" height="340" />
+            <rect class="rect-round" x="520" y="30" width="220" height="420" />
 
-            <text x="200" y="40" class="label">Front</text>
-            <text x="400" y="40" class="label">Central</text>
-            <text x="600" y="40" class="label">Back</text>
+            <text x="200" y="35" class="label">Front</text>
+            <text x="400" y="35" class="label">Central</text>
+            <text x="600" y="35" class="label">Back</text>
 
-            <text x="80" y="125" transform="rotate(-90 80 125)" class="label">High</text>
-            <text x="130" y="275" transform="rotate(-90 130 275)" class="label">Mid</text>
-            <text x="180" y="425" transform="rotate(-90 180 425)" class="label">Low</text>
+            <text x="75" y="125" transform="rotate(-90 75 125)" class="label">Close</text>
+            <text x="125" y="275" transform="rotate(-90 125 275)" class="label">Mid</text>
+            <text x="175" y="425" transform="rotate(-90 175 425)" class="label">Open</text>
 
-            <text x="765" y="200" transform="rotate(90 765 200)" class="label-round">Round</text>
+            <text x="755" y="200" transform="rotate(90 755 200)" class="label-round">Round</text>
 
-            <text x="437.5" y="415" class="label">Lax</text>
-            <text x="437.5" y="490" class="label">Tense</text>
+            <text x="480" y="420" class="label-small">lax</text>
+            <text x="460" y="495" class="label-small">Tense</text>
 
-            <text x="135" y="110" class="phoneme">i</text>
-            <text x="225" y="180" class="phoneme">ɪ</text>
-            <text x="665" y="110" class="phoneme">u</text>
-            <text x="560" y="180" class="phoneme">ʊ</text>
+            <text x="135" y="90" class="phoneme black">i</text>
+            <text x="135" y="110" class="word black">k<tspan class="red">e</tspan>y</text>
+            <text x="135" y="125" class="word black">nar<tspan class="red">i</tspan>z</text>
 
-            <text x="185" y="245" class="phoneme">e</text>
-            <text x="270" y="320" class="phoneme">ɛ</text>
-            <text x="400" y="285" class="phoneme">ə</text>
-            <text x="460" y="340" class="phoneme">ʌ</text>
-            <text x="665" y="260" class="phoneme">o</text>
-            <text x="560" y="325" class="phoneme">ɔ</text>
+            <text x="235" y="160" class="phoneme blue">ɪ</text>
+            <text x="235" y="180" class="word blue">w<tspan class="red">i</tspan>n</text>
 
-            <text x="310" y="415" class="phoneme">æ</text>
-            <text x="560" y="415" class="phoneme">a</text>
+            <text x="185" y="230" class="phoneme black">e</text>
+            <text x="185" y="250" class="word black">r<tspan class="red">e</tspan>bate</text>
+            <text x="185" y="265" class="word black">m<tspan class="red">e</tspan>sa</text>
+
+            <text x="280" y="295" class="phoneme blue">ɛ</text>
+            <text x="280" y="315" class="word black">r<tspan class="red">e</tspan>d</text>
+
+            <text x="340" y="405" class="phoneme blue">æ</text>
+            <text x="340" y="420" class="word black">b<tspan class="red">a</tspan>d</text>
+
+            <text x="260" y="455" class="phoneme black">a</text>
+            <text x="260" y="475" class="word black">h<tspan class="red">a</tspan>t</text>
+            <text x="260" y="490" class="word black">p<tspan class="red">a</tspan>to</text>
+
+            <text x="450" y="250" class="phoneme blue">ə</text>
+            <text x="450" y="270" class="word blue"><tspan class="red">a</tspan>bout</text>
+
+            <text x="500" y="295" class="phoneme blue">ʌ</text>
+            <text x="500" y="315" class="word blue">b<tspan class="red">u</tspan>d</text>
+
+            <text x="650" y="90" class="phoneme black">u</text>
+            <text x="650" y="110" class="word black">m<tspan class="red">oo</tspan>n</text>
+            <text x="650" y="125" class="word black">j<tspan class="red">u</tspan>go</text>
+
+            <text x="560" y="160" class="phoneme blue">ʊ</text>
+            <text x="560" y="180" class="word blue">w<tspan class="red">oo</tspan>d</text>
+
+            <text x="650" y="240" class="phoneme black">o</text>
+            <text x="650" y="260" class="word black"><tspan class="red">o</tspan>kay</text>
+            <text x="650" y="275" class="word black">pat<tspan class="red">o</tspan></text>
+
+            <text x="560" y="295" class="phoneme blue">ɔ</text>
+            <text x="560" y="315" class="word blue">l<tspan class="red">aw</tspan></text>
+
+            <text x="560" y="405" class="phoneme blue">ɑ</text>
+            <text x="560" y="420" class="word blue">c<tspan class="red">o</tspan>d</text>
 
         </svg>
     </div>
