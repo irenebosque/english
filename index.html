@@ -1,6 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Hola mundo</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPA Vowel Trapezoid</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Trapezoid -->
+    <polygon
+      points="100,50 400,50 300,350 100,350"
+      fill="none"
+      stroke="black"
+      stroke-width="2"
+    />
+
+    <!-- Horizontal grid lines (mid-close, mid, mid-open) -->
+    <line x1="100" y1="125" x2="358" y2="125" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
+    <line x1="100" y1="200" x2="317" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
+    <line x1="100" y1="275" x2="158" y2="275" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
+
+    <!-- Row labels (left side) -->
+    <text x="55" y="54"  font-size="13" font-family="serif" text-anchor="end">Close</text>
+    <text x="55" y="129" font-size="13" font-family="serif" text-anchor="end">Close-mid</text>
+    <text x="55" y="204" font-size="13" font-family="serif" text-anchor="end">Open-mid</text>
+    <text x="55" y="279" font-size="13" font-family="serif" text-anchor="end">Open</text>
+    <text x="55" y="354" font-size="13" font-family="serif" text-anchor="end">Open</text>
+
+    <!-- Column labels (top) -->
+    <text x="100" y="30" font-size="13" font-family="serif" text-anchor="middle">Front</text>
+    <text x="250" y="30" font-size="13" font-family="serif" text-anchor="middle">Central</text>
+    <text x="400" y="30" font-size="13" font-family="serif" text-anchor="middle">Back</text>
+  </svg>
+</body>
 </html>
