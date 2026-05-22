@@ -1,45 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>IPA Vowel Trapezoid</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPA Vowel Chart</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .chart-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos de las líneas */
+        .line-main {
+            stroke: #000;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        .line-grid {
+            stroke: #000;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* Polígono del área "Lax" */
+        .poly-lax {
+            fill: #aaaaaa;
+            stroke: #000;
+            stroke-width: 3.5;
+            stroke-dasharray: 6, 4;
+        }
+
+        /* Rectángulo de las vocales redondeadas */
+        .rect-round {
+            stroke: #000;
+            stroke-width: 3.5;
+            fill: none;
+            stroke-dasharray: 12, 10;
+        }
+
+        /* Tipografía de los fonemas y etiquetas */
+        .phoneme {
+            font-size: 46px;
+            text-anchor: middle;
+            fill: #000;
+        }
+
+        .label {
+            font-size: 22px;
+            text-anchor: middle;
+            fill: #000;
+        }
+
+        .label-round {
+            font-size: 22px;
+            text-anchor: middle;
+            fill: #000;
+        }
+    </style>
 </head>
 <body>
-  <svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-    <!-- Trapezoid -->
-    <polygon
-      points="100,50 400,50 300,350 100,350"
-      fill="none"
-      stroke="black"
-      stroke-width="2"
-    />
 
-    <!-- Horizontal grid lines (mid-close, mid, mid-open) -->
-    <line x1="100" y1="125" x2="358" y2="125" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
-    <line x1="100" y1="200" x2="317" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
-    <line x1="100" y1="275" x2="158" y2="275" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
+    <div class="chart-container">
+        <svg viewBox="0 0 850 550" width="850" height="550" xmlns="http://www.w3.org/2000/svg">
+            
+            <path class="poly-lax" d="M 175 125 L 600 125 L 600 425 L 275 425 Z" />
 
-    <!-- Row labels (left side) -->
-    <text x="55" y="54"  font-size="13" font-family="serif" text-anchor="end">Close</text>
-    <text x="55" y="129" font-size="13" font-family="serif" text-anchor="end">Close-mid</text>
-    <text x="55" y="204" font-size="13" font-family="serif" text-anchor="end">Open-mid</text>
-    <text x="55" y="279" font-size="13" font-family="serif" text-anchor="end">Open</text>
-    <text x="55" y="354" font-size="13" font-family="serif" text-anchor="end">Open</text>
+            <path class="line-main" d="M 100 50 L 700 50 L 700 500 L 250 500 Z" />
+            
+            <path class="line-grid" d="M 150 200 L 700 200" />
+            <path class="line-grid" d="M 200 350 L 700 350" />
+            
+            <path class="line-grid" d="M 300 50 L 300 500" />
+            <path class="line-grid" d="M 500 50 L 500 500" />
 
-    <!-- Column labels (top) -->
-    <text x="100" y="30" font-size="13" font-family="serif" text-anchor="middle">Front</text>
-    <text x="250" y="30" font-size="13" font-family="serif" text-anchor="middle">Central</text>
-    <text x="400" y="30" font-size="13" font-family="serif" text-anchor="middle">Back</text>
-  </svg>
+            <rect class="rect-round" x="520" y="30" width="220" height="340" />
+
+            <text x="200" y="40" class="label">Front</text>
+            <text x="400" y="40" class="label">Central</text>
+            <text x="600" y="40" class="label">Back</text>
+
+            <text x="80" y="125" transform="rotate(-90 80 125)" class="label">High</text>
+            <text x="130" y="275" transform="rotate(-90 130 275)" class="label">Mid</text>
+            <text x="180" y="425" transform="rotate(-90 180 425)" class="label">Low</text>
+
+            <text x="765" y="200" transform="rotate(90 765 200)" class="label-round">Round</text>
+
+            <text x="437.5" y="415" class="label">Lax</text>
+            <text x="437.5" y="490" class="label">Tense</text>
+
+            <text x="135" y="110" class="phoneme">i</text>
+            <text x="225" y="180" class="phoneme">ɪ</text>
+            <text x="665" y="110" class="phoneme">u</text>
+            <text x="560" y="180" class="phoneme">ʊ</text>
+
+            <text x="185" y="245" class="phoneme">e</text>
+            <text x="270" y="320" class="phoneme">ɛ</text>
+            <text x="400" y="285" class="phoneme">ə</text>
+            <text x="460" y="340" class="phoneme">ʌ</text>
+            <text x="665" y="260" class="phoneme">o</text>
+            <text x="560" y="325" class="phoneme">ɔ</text>
+
+            <text x="310" y="415" class="phoneme">æ</text>
+            <text x="560" y="415" class="phoneme">a</text>
+
+        </svg>
+    </div>
+
 </body>
 </html>
